@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>一頁式網頁範例</title>
+
+<style>
+/* ===== 基本設定 ===== */
+body {
+    margin: 0;
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
+    background-color: #f4f6f8;
+}
+
+/* ===== 頁首 ===== */
+header {
+    background-color: #1e88e5;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ===== 導覽列 ===== */
+nav {
+    background-color: #1565c0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #0d47a1;
+}
+
+/* ===== 下拉式選單 ===== */
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #1976d2;
+    top: 50px;
+    min-width: 150px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul ul li a {
+    padding: 12px;
+}
+
+/* ===== 輪播區 ===== */
+.slider {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    animation: slide 12s infinite;
+}
+
+.slides img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+/* ===== 內容區 ===== */
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+.info {
+    background-color: white;
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* ===== 卡片區 ===== */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== 頁尾 ===== */
+footer {
+    background-color: #1e1e1e;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 頁首 -->
+<header>
+    <h1>四資二甲 魏子淵 B13090039</h1>
+    <p>我的一頁式網頁</p>
+</header>
+
+<!-- 導覽列 + 下拉式快速連結 -->
+<nav>
+    <ul>
+        <li><a href="#home">首頁</a></li>
+        <li>
+            <a href="#">快速連結 ▾</a>
+            <ul>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#service">服務項目</a></li>
+                <li><a href="#contact">聯絡方式</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<!-- 圖片輪播 -->
+<div class="slider">
+    <div class="slides">
+        <img src="https://picsum.photos/1200/300?random=1">
+        <img src="https://picsum.photos/1200/300?random=2">
+        <img src="https://picsum.photos/1200/300?random=3">
+    </div>
+</div>
+
+<!-- 相關資訊 -->
+<section id="about">
+    <div class="info">
+        <h2>關於此網頁</h2>
+        <p>
+            本網站為一頁式網頁範例，使用 HTML 與 CSS 製作，
+            包含導覽列、下拉式選單與圖片輪播效果。
+        </p>
+    </div>
+</section>
+
+<!-- 自訂元素：卡片 -->
+<section id="service">
+    <h2>特色服務</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>簡潔設計</h3>
+            <p>版面清楚，適合展示重點內容。</p>
+        </div>
+        <div class="card">
+            <h3>快速連結</h3>
+            <p>下拉選單方便使用者導覽。</p>
+        </div>
+        <div class="card">
+            <h3>圖片輪播</h3>
+            <p>純 CSS 動畫，免 JavaScript。</p>
+        </div>
+    </div>
+</section>
+
+<!-- 聯絡資訊 -->
+<section id="contact">
+    <div class="info">
+        <h2>聯絡方式</h2>
+        <p>Email：ivanwei921204@gmail.com</p>
+        <p>電話：0907-941-104</p>
+    </div>
+</section>
+
+<!-- 頁尾 -->
+<footer>
+    © 2025 一頁式網頁作業 | HTML & CSS
+</footer>
+
+</body>
+</html>
